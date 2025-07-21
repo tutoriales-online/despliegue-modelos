@@ -1,0 +1,11 @@
+.venv
+.ipynb_checkpoints
+.DS_Store
+.metaflow
+*.py[cod]
+*.joblib
+mlruns
+mlartifacts
+models/
+**/monitoring/
+__pycache__/
