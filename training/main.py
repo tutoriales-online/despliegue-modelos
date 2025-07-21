@@ -114,6 +114,15 @@ def save_model(model: Pipeline, models_path: str, model_name: str) -> Path:
 
     return final_model_path
 
+
+def save_to_bento_store(model: Pipeline, model_name: str) -> bentoml.Model:
+    """
+    Guarda el modelo en BentoML.
+    """
+    bento_model = bentoml.sklearn.save_model(model_name, model)
+    return bento_model
+
+
 def main():
     """
     Función principal que ejecuta todo el flujo de entrenamiento del modelo.
@@ -143,6 +152,12 @@ def main():
     # Guardar el modelo
     print("Guardando modelo entrenado...")
     model_path = save_model(model, MODELS_PATH, MODEL_NAME)
+
+    # Guardar el modelo en BentoML
+    print("Guardando modelo en BentoML...")
+    bento_model = save_to_bento_store(model, MODEL_NAME)
+
+    print(f"Modelo guardado en BentoML: {bento_model}")
 
     return model_path
 

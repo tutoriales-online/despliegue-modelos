@@ -24,3 +24,10 @@ dev = [
     "jupyter>=1.1.1",
     "jupyterlab>=4.4.4",
 ]
+
+[tool.bentoml.build]
+service = "service:HotelCancellationsService"
+exclude = [
+    "models/",
+    "data/",
+]
