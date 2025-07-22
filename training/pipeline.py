@@ -32,7 +32,6 @@ def build_pipeline() -> Pipeline:
         "meal",  # Tipo de comida incluida
         "distribution_channel",  # Canal de distribución
         "reserved_room_type",  # Tipo de habitación reservada
-        "assigned_room_type",  # Tipo de habitación asignada
         "customer_type",  # Tipo de cliente
     ]
 
@@ -41,11 +40,7 @@ def build_pipeline() -> Pipeline:
     # Binarizador para variables numéricas específicas
     internal_binarizer = Binarizer()
     columns_to_binarize = [
-        "total_of_special_requests",  # Total de solicitudes especiales
         "required_car_parking_spaces",  # Espacios de estacionamiento requeridos
-        "booking_changes",  # Cambios en la reserva
-        "previous_bookings_not_canceled",  # Reservas previas no canceladas
-        "previous_cancellations",  # Cancelaciones previas
     ]
     internal_encoder_binarizer = OneHotEncoder(sparse_output=False, handle_unknown="ignore")
 
