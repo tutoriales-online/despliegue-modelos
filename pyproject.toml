@@ -15,6 +15,7 @@ dependencies = [
     "pandas==2.3.1",
     # Librería para machine learning (modelos, preprocesamiento, evaluación)
     "scikit-learn==1.7.0",
+    "streamlit>=1.47.0",
 ]
 
 [dependency-groups]
